@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MapaPogody:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MapaPogody_jar</output-path>
+    <root id="archive" name="MapaPogody.jar">
+      <element id="module-output" name="MapaPogody" />
+    </root>
+  </artifact>
+</component>
