@@ -3,7 +3,8 @@ import java.awt.image.BufferedImage;
 
 public class MapColorer {
 
-    City[] cities;
+    private City[] cities;
+    private int hour = 0;
 
     MapColorer(City[] cities) {
         this.cities = cities;
@@ -57,8 +58,8 @@ public class MapColorer {
                 case "Precipitation":
                     double rainH = getPar(x, y, "Rain");
                     if (rainH > 0.1) {
-                        g.setColor(Color.GRAY);
-                        g.drawLine(x, y, x, y + (int) (rainH * 2));
+                        g.setColor(Color.BLACK);
+                        g.drawLine(x, y + 1, x, y + 1 + (int) (rainH * 2));
                     }
                     double snowH = getPar(x, y, "Snow");
                     if (snowH > 0.1) {
@@ -79,7 +80,7 @@ public class MapColorer {
         return color;
     }
 
-    public String getWindDir(int x, int y, String par) {
+    public String getWindDir(int x, int y) {
         double angle = getPar(x, y, "Wind (dir)");
         double s = 11.25;
         if (isBetween(angle, 0, s) || isBetween(angle, 31 * s, 32 * s)) return "S";
@@ -103,7 +104,6 @@ public class MapColorer {
     public double getPar(int x, int y, String par) {
         double parValue;
 
-        int hour = 0;
         double numeral = 0;
         double denominator = 0;
         for (City city : cities) {
@@ -202,4 +202,12 @@ public class MapColorer {
     private static boolean isBetween(double x, double lower, double upper) {
         return lower <= x && x <= upper;
     }
+
+
+//get/set/////////////////////////////////////////////////////////////////////////////
+    public void setHour(int hour) {
+        this.hour = hour;
+    }
 }
+
+

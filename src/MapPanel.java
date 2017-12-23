@@ -80,7 +80,7 @@ public class MapPanel extends JPanel {
         String feelTemp = Double.toString(Math.round(mapColorer.getPar(clickPoint.x, clickPoint.y, "Temperature (feel)")
                 * 10.)/10.) + " \u00b0C";
         String wind = Double.toString(Math.round(mapColorer.getPar(clickPoint.x, clickPoint.y, "Wind")
-                * 10.)/10.) + " m/s " + mapColorer.getWindDir(clickPoint.x, clickPoint.y, "Wind (dir)");
+                * 10.)/10.) + " m/s " + mapColorer.getWindDir(clickPoint.x, clickPoint.y);
         String precipitation = "\nRain: " + Double.toString(Math.round(mapColorer.getPar(clickPoint.x, clickPoint.y, "Rain")
                 * 10.)/10.) + " mm" +
                 "\nSnow: " + Double.toString(Math.round(mapColorer.getPar(clickPoint.x, clickPoint.y, "Snow")
@@ -112,5 +112,9 @@ public class MapPanel extends JPanel {
 
     public void setClickPoint(Point clickPoint) {
         this.clickPoint = clickPoint;
+    }
+
+    public void setHour(int hour){
+        mapColorer.setHour(hour);
     }
 }

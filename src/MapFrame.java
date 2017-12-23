@@ -2,16 +2,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class MapFrame extends JFrame {
     private MapPanel mapPanel;
     private JLabel parLabel;
-    JTextArea parTextArea = new JTextArea();
-    private City[] cities;
+    private JTextArea parTextArea = new JTextArea();
 
 
     MapFrame(City[] cities){
-        this.cities = cities;
 
         setSize(850, 570);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -26,7 +27,7 @@ public class MapFrame extends JFrame {
     }
 
     private void addComponents(){
-        mapPanel.setBounds(new Rectangle(20,20, mapPanel.MAP_WIDTH, mapPanel.MAP_HEIGHT));
+        mapPanel.setBounds(new Rectangle(20,20, MapPanel.MAP_WIDTH, MapPanel.MAP_HEIGHT));
         add(mapPanel);
         String[] parameters = {"Temperature", "Temperature (feel)", "Wind", "Precipitation"};
 
@@ -43,6 +44,19 @@ public class MapFrame extends JFrame {
         parTextArea.setBounds(new Rectangle(570,60,170,460));
         parTextArea.setEditable(false);
         add(parTextArea);
+
+        Date date = new Date();
+        Calendar calendar = GregorianCalendar.getInstance();
+        calendar.setTime(date);
+        int hourOfDay = calendar.get(Calendar.HOUR_OF_DAY);
+
+        JSlider hourSlider = new JSlider(JSlider.VERTICAL, hourOfDay, hourOfDay + App.HOURS, hourOfDay);
+        hourSlider.setMajorTickSpacing(6);
+        hourSlider.setMinorTickSpacing(1);
+        hourSlider.setPaintTicks(true);
+        hourSlider.setPaintTrack(true);
+        hourSlider.setBounds(750, 60, 50, 460);
+        add(hourSlider);
     }
 
     void updateLabel(String parStrValue){
@@ -71,4 +85,6 @@ public class MapFrame extends JFrame {
             mapPanel.requestFrameUpdate();
         }
     }
+
+
 }
