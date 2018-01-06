@@ -31,4 +31,6 @@ public class CitiesDrawer {
 //        System.out.println(x_pos + " "+ y_pos + " "+ longitude + " "+ latitude);
         return new Point(x_pos, y_pos);
     }
+
+//    public Point givePosition(Point xyPoint){}
 }

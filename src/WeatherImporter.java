@@ -37,8 +37,8 @@ public class WeatherImporter {
     }
 
     private void importCityData(City city, int id) {
-        URL url = null;
-        InputStream inputStream = null;
+        URL url;
+        InputStream inputStream;
         try {
             url = new URL("https://pogoda.interia.pl/prognoza-szczegolowa-xxx,cId," + CITIES_ID_LIST[id]);
             URLConnection connection = url.openConnection();
@@ -110,10 +110,6 @@ public class WeatherImporter {
                 line = bufferedReader.readLine();
                 writeCityHumidity(city, line, hour);
             }
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-            JOptionPane.showOptionDialog(null, "Failed to download data from interia.pl"," ",
-                    JOptionPane.DEFAULT_OPTION,JOptionPane.ERROR_MESSAGE, null, new Object[]{}, null);
         } catch (IOException e) {
             e.printStackTrace();
             JOptionPane.showOptionDialog(null, "Failed to download data from interia.pl"," ",

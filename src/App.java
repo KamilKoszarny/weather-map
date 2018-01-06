@@ -2,8 +2,8 @@ import javax.swing.*;
 
 public class App {
 
-    private static final int CITIES_NUMBER = 5;
-    public static final int HOURS = 71;
+    private static final int CITIES_NUMBER = 16;
+    public static final int HOURS = 48;
 
     public static void main(String[] args){
         City[] cities = new City[CITIES_NUMBER];
@@ -19,18 +19,18 @@ public class App {
         WeatherImporter weatherImporter = new WeatherImporter();
         weatherImporter.importData(cities);
 
-        System.out.println("weather");
+        System.out.println("weather ready");
 
         CoordinatesImporter coordinatesImporter = new CoordinatesImporter();
         coordinatesImporter.importCoordinates(cities);
 
-        System.out.println("coordinates");
+        System.out.println("coordinates ready");
 
         showData(cities);
 
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                App.operate();
+//                App.operate();
                 MapFrame mapFrame = new MapFrame(cities);
             }
         });
