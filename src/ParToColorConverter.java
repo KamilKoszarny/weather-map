@@ -2,8 +2,8 @@ import java.awt.*;
 
 public class ParToColorConverter {
 
-    private final static int SCALE = 61;
-    private final static int TEMP_MIN = -20;
+    private final static int SCALE = 71;
+    private final static int TEMP_MIN = -30;
     private double[] temps = new double[SCALE];
     private Color[] colors = {
             new Color(255, 0, 0),
@@ -62,11 +62,22 @@ public class ParToColorConverter {
             new Color(0, 18, 255),
             new Color(0, 2, 255),
             new Color(0, 0, 255),
-            new Color(1, 0, 255),
-            new Color(2, 0, 255),
-            new Color(3, 0, 255),
-            new Color(4, 0, 255),
-            new Color(5, 0, 255)
+            new Color(10, 0, 255),
+            new Color(20, 0, 255),
+            new Color(30, 0, 255),
+            new Color(40, 0, 255),
+            new Color(50, 0, 255),
+            new Color(60, 0, 255),
+            new Color(70, 0, 255),
+            new Color(80, 0, 255),
+            new Color(90, 0, 255),
+            new Color(100, 0, 255),
+            new Color(110, 0, 255),
+            new Color(120, 0, 255),
+            new Color(130, 0, 255),
+            new Color(140, 0, 255),
+            new Color(150, 0, 255),
+            new Color(160, 0, 255)
     };
 
 
