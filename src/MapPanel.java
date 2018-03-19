@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Point2D;
@@ -119,25 +118,3 @@ public class MapPanel extends JPanel {
         mapColorer.setHour(hour);
     }
 }
-=======
-import javax.swing.*;
-import java.awt.*;
-
-public class MapPanel extends JPanel {
-
-    public MapPanel(){
-        setSize(1068/2, 988/2);
-    }
-
-    @Override
-    public void paint(Graphics g) {
-        super.paint(g);
-        g.setColor (Color.BLUE);
-        g.fillRect (0,0, getWidth(), getHeight());
-        g.setColor (Color.YELLOW);
-        g.drawString ("To jest tekst",30,60);
-        g.setColor (Color.GREEN);
-        g.drawRect (30,80,60,20);
-    }
-}
->>>>>>> d141ed27269fb49b2113ee3b3b1a9ce2a31a9a3c
