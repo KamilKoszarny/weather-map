@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -124,3 +125,22 @@ public class MapFrame extends JFrame {
         }
     }
 }
+=======
+import javax.swing.*;
+import
+
+public class MapFrame extends JFrame {
+
+    public MapFrame(){
+        setSize(1200, 700);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        setLayout(new MiGLayout);
+
+        MapPanel mapPanel = new MapPanel();
+        add(mapPanel);
+
+        setVisible(true);
+    }
+}
+>>>>>>> d141ed27269fb49b2113ee3b3b1a9ce2a31a9a3c
